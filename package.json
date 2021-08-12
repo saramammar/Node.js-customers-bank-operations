@@ -1,0 +1,23 @@
+{
+  "name": "Node.js-customers-bank-operations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saramammar/Node.js-customers-bank-operations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saramammar/Node.js-customers-bank-operations/issues"
+  },
+  "homepage": "https://github.com/saramammar/Node.js-customers-bank-operations#readme",
+  "dependencies": {
+    "yargs": "^17.1.0"
+  }
+}
