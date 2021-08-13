@@ -77,6 +77,29 @@ class Customer {
         this.allCustomers[indx].balance = argv.balance;
         this.writeOnJsonFile()
     }
+
+    withdraw(argv) {
+        this.readFromJsonFile();
+        const indx = this.allCustomers.findIndex(c => c.id === argv.id);
+        if (indx === -1) return console.log('Customer is not found');
+        if (!this.allCustomers[indx].status) return console.log('Customer is suspended');
+        if (this.allCustomers[indx].balance < argv.balance) return console.log('Not enough balance to withdraw');
+        if (+argv.balance > 5000) return console.log('Maximum 5000 per day');
+        this.allCustomers[indx].balance -= argv.balance;
+        this.writeOnJsonFile();
+        console.log(`You withdrawed ${argv.balance} successfully. Your balance became ${this.allCustomers[indx].balance}`);
+    }
+
+    deposit(argv) {
+        this.readFromJsonFile();
+        const indx = this.allCustomers.findIndex(c => c.id === argv.id);
+        if (indx === -1) return console.log('Customer is not found');
+        if (!this.allCustomers[indx].status) return console.log('Customer is suspended');
+        if (+argv.balance > 10000) return console.log('Maximum 10000 per day');
+        this.allCustomers[indx].balance += argv.balance;
+        this.writeOnJsonFile();
+        console.log(`You deposited ${argv.balance} successfully. Your balace became ${this.allCustomers[indx].balance}`);
+    }
 }
 
 const customer = new Customer();

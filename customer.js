@@ -89,4 +89,36 @@ yargs.command({
     handler: (argv) => myfunctions.edit(argv)
 });
 
+yargs.command({
+    command: 'withdraw',
+    describe: 'Withdraw your balance amount',
+    builders: {
+        id: { 
+            demandOption: true,
+            type: 'number'
+        },
+        balance: {
+            demandOption: true, 
+            type: 'number'
+        }
+    },
+    handler: (argv) => myfunctions.withdraw(argv)
+});
+
+yargs.command({
+    command: 'deposit',
+    describe: 'Deposit your balance amount',
+    builders: {
+        id: { 
+            demandOption: true,
+            type: 'number'
+        },
+        balance: {
+            demandOption: true, 
+            type: 'number'
+        }
+    },
+    handler: (argv) => myfunctions.deposit(argv)
+});
+
 yargs.argv
